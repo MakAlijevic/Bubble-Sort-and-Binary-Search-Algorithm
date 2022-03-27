@@ -29,4 +29,7 @@ public class IPAddress implements Comparable<IPAddress>{
             return 0;
         }
     }
+    public String toString(){
+        return ("ipFrom - " + ipFrom + " / ipTo - " + ipTo + " / countryCode - " + countryCode + " / countryName - " + countryName + " / regionName - " + regionName + " / cityName - " + cityName);
+    }
 }

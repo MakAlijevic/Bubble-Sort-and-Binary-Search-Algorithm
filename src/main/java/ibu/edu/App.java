@@ -16,20 +16,19 @@ public class App
         IPAddress[] ipAddresses = new IPAddress[4637054];
 
         int i = 0;
-        while(input.hasNextLine()){
+        while(input.hasNextLine() && i < 100){
             String data = input.nextLine();
             data = data.replace("\"", "");
             ips = data.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
-            String ipFrom = ips[0];
-            long ipfrom = Long.parseLong(ipFrom);
-            String ipTo = ips[1];
-            long ipto = Long.parseLong(ipTo);
-            ipAddresses[i] = new IPAddress(ipfrom, ipto, ips[2], ips[3], ips[4], ips[5]);
-            System.out.println(ipAddresses);
+            long ipFrom = Long.parseLong(ips[0]);
+            long ipTo = Long.parseLong(ips[1]);
+
+            ipAddresses[i] = new IPAddress(ipFrom, ipTo, ips[2], ips[3], ips[4], ips[5]);
+            System.out.println(ipAddresses[i]);
             i++;
         }
         input.close();
-
         BubbleSort.sort(ipAddresses);
+
     }
 }
