@@ -18,11 +18,11 @@ public class IPAddress implements Comparable<IPAddress>{
     }
 
     @Override
-    public int compareTo(IPAddress ip2) {
-        if(this.ipFrom > ip2.ipFrom){
+    public int compareTo(IPAddress that) {
+        if(this.ipFrom > that.ipFrom){
             return 1;
         }
-        else if(this.ipFrom < ip2.ipFrom){
+        else if(this.ipFrom < that.ipFrom){
             return -1;
         }
         else{
