@@ -28,7 +28,6 @@ public class App
             i++;
         }
         input.close();
-        BubbleSort.sort(ipAddresses);
 
     }
 }
