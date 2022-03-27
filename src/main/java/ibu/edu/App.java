@@ -12,8 +12,8 @@ public class App
         File file = new File(path);
         Scanner input = new Scanner(file);
 
-        String[] ips = new String[50];
-        IPAddress[] ipAddresses = new IPAddress[50];
+        String[] ips;
+        IPAddress[] ipAddresses = new IPAddress[4637054];
 
         int i = 0;
         while(input.hasNextLine()){
@@ -24,9 +24,12 @@ public class App
             long ipfrom = Long.parseLong(ipFrom);
             String ipTo = ips[1];
             long ipto = Long.parseLong(ipTo);
-            System.out.println(ipto);
+            ipAddresses[i] = new IPAddress(ipfrom, ipto, ips[2], ips[3], ips[4], ips[5]);
+            System.out.println(ipAddresses);
             i++;
         }
         input.close();
+
+        BubbleSort.sort(ipAddresses);
     }
 }
