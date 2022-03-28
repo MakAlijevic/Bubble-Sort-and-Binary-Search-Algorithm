@@ -68,11 +68,11 @@ public class App {
         System.out.println("Enter IP address to search for location : ");
         String ipadd = scanner.nextLine();
 
-        //IP octet extraction method
+            //IP octet extraction method
         int octet[] = new int[4];
         StringBuilder tmp = new StringBuilder();
         int counter = 0;
-        for(int p = 0; p<ipadd.length();p++){
+        for(int p = 0; p < ipadd.length(); p++){
             if (ipadd.charAt(p) != '.') {
                 tmp.append(ipadd.charAt(p));
             }
@@ -85,5 +85,9 @@ public class App {
         int x = octet[1];
         int y = octet[2];
         int z = octet[3];
+
+        long ipNumber = 16777216L * w + 65536L * x + 256L * y + z;
+
+        System.out.println(BinarySearch.binarySearch(sortedIpAddresses, ipNumber));
     }
 }
